@@ -45,7 +45,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     model = Post
-    success_url = "blog:home"
+    success_url = "/"
 
     def test_func(self):
         return True if self.get_object().author == self.request.user else False
