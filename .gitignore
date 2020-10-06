@@ -112,6 +112,10 @@ media/
 *.pyc
 *.db
 *.pid
+
+# IDE
+.idea/
+.vscode/
 # django migrations 
 **/migrations/**
 !**/migrations
