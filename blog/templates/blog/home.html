@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %} 
+{% load blog_extras %}
 {% block content %}
   {% for post in posts %}
     <article class="media content-section">
@@ -13,7 +14,7 @@
           <small class="text-muted">{{post.date_posted | date:'F d Y' }}</small>
         </div>
         <h2><a class="article-title" href={% url 'blog:post-detail' post.id %}>{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.content }}</p>
+        <p class="article-content">{{ post.content | convert_markdown | safe}}</p>
       </div>
     </article>
   {% endfor %} 

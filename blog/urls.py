@@ -11,4 +11,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('post/<str:username>/',
          views.UserPostListView.as_view(), name='user-post'),
+
 ]
